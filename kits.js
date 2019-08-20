@@ -2,12 +2,14 @@ var kits = {};
 
 
 // 数字前加0
+// exp: kits.addZero(02) => '2';
 kits.addZero = function (date) {
     date = date >= 10 ? date : '0' + date;
     return date;
 };
 
 // 获取实时时间
+//exp: 2019-08-20 19:50:16
 kits.getTime = function () {
     var time = new Date();
     var year = time.getFullYear();
@@ -20,11 +22,13 @@ kits.getTime = function () {
 };
 
 // 获取从n到m的随机数
+//exp: kits.randomNum(1,100) => 1-100随机一个整数
 kits.randomNum = function (n, m) {
     return Math.floor(Math.random() * (m - n + 1) + n);
 };
 
 // 获取随机ID
+//exp: kits.randomId(1,100) => 1970年至今毫秒数拼接1-100随机一个整数
 kits.randomId = function (n, m) {
     var time = new Date();
     time = time.getTime();
@@ -34,6 +38,7 @@ kits.randomId = function (n, m) {
 };
 
 // 获取随机颜色 rgb模式
+//exp: rgb(21,45,164)
 kits.randomRgbColor = function () {
     var r = kits.randomNum(0, 255);
     var g = kits.randomNum(0, 255);
@@ -43,6 +48,7 @@ kits.randomRgbColor = function () {
 };
 
 // 获取随机颜色 hex模式
+//exp: #9cbebe
 kits.randomHexColor = function () {
     var n = ((Math.random() * 0xfffff) | 0).toString(16);
     var result = '#' + (n.length !== 6 ? ((Math.random() * 0xf) | 0).toString(16) + n : n);
